@@ -11,11 +11,11 @@ using System.Windows.Forms;
 
 namespace BaitapLad02Bai1
 {
-    public partial class Form1 : Form
+    public partial class Form : System.Windows.Forms.Form
     {
         private List<Info> listInfo = new List<Info>();
 
-        public Form1()
+        public Form()
         {
             InitializeComponent();
             TaoBang();

@@ -1,6 +1,6 @@
 ﻿namespace BaitapLad02Bai1
 {
-    partial class Form1
+    partial class Form
     {
         /// <summary>
         /// Required designer variable.
@@ -210,16 +210,15 @@
             this.lstData.TabIndex = 1;
             this.lstData.UseCompatibleStateImageBehavior = false;
             this.lstData.View = System.Windows.Forms.View.Details;
-          
             // 
-            // Form1
+            // Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(769, 347);
             this.Controls.Add(this.lstData);
             this.Controls.Add(this.groupBox1);
-            this.Name = "Form1";
+            this.Name = "Form";
             this.Text = "Cấp học bổng";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
