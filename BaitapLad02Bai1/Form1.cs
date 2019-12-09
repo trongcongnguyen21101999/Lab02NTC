@@ -14,6 +14,7 @@ namespace BaitapLad02Bai1
     public partial class Form : System.Windows.Forms.Form
     {
         private List<Info> listInfo = new List<Info>();
+        private int X;
 
         public Form()
         {
@@ -21,6 +22,7 @@ namespace BaitapLad02Bai1
             TaoBang();
             Control.CheckForIllegalCrossThreadCalls = false;
             lstData.FullRowSelect = true;
+            
         }
 
         public void TaoBang()
@@ -46,18 +48,6 @@ namespace BaitapLad02Bai1
             }
         }
 
-
-        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            
-        }
-
-
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnThem_Click(object sender, EventArgs e)
         {
             Thread thd = new Thread(Them);
@@ -73,8 +63,8 @@ namespace BaitapLad02Bai1
 
         void Them()
         {
-            Info info = new Info(txtHoTen.Text, txtTruong.Text, cmbLop.Text, cbxLoai.Text, txtMucHocBong.Text);
-            listInfo.Add(info);
+            
+            listInfo.Add(new Info(txtHoTen.Text, txtTruong.Text, cmbLop.Text, cbxLoai.Text, txtMucHocBong.Text));
             lstData.Items.Add(AddItem());
             ClearBox();
         }
@@ -82,6 +72,7 @@ namespace BaitapLad02Bai1
         public void ClearBox()
         {
             txtHoTen.Text = txtTruong.Text = "";
+            //txtMucHocBong.Text = "";
             //cbxLoai.Text = cmbLop.Text = "";
         }
 
@@ -89,7 +80,6 @@ namespace BaitapLad02Bai1
         {
             ListViewItem liv = new ListViewItem(txtHoTen.Text);
 
-            //liv.Text = txtHoTen.Text;
             liv.SubItems.Add(cbxLoai.Text);
             string HB = txtMucHocBong.Text;
             HB = HB.Substring(0, HB.IndexOf("VNĐ") - 1);
@@ -122,7 +112,11 @@ namespace BaitapLad02Bai1
 
         private void btnCapNhat_Click(object sender, EventArgs e)
         {
-            
+            listInfo[X].Name = lstData.Items[X].SubItems[0].Text = txtHoTen.Text;
+            listInfo[X].Lop = cmbLop.Text;
+            listInfo[X].Loai = lstData.Items[X].SubItems[1].Text = cbxLoai.Text;
+            listInfo[X].HocBong = lstData.Items[X].SubItems[2].Text = (txtMucHocBong.Text).Substring(0, (txtMucHocBong.Text).IndexOf("VNĐ") - 1);
+            listInfo[X].Truong = txtTruong.Text;
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
@@ -131,8 +125,39 @@ namespace BaitapLad02Bai1
             {
                 for (int i = 0; i < lstData.SelectedItems.Count; i++)
                 {
+                    int a = lstData.TabIndex;
                     lstData.SelectedItems[i].Remove();
                 }
+            }
+        }
+
+        private void lstData_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Thread thread = new Thread(LoadInfo);
+            thread.Start();
+        }
+
+
+        void LoadInfo()
+        {
+            if (lstData.SelectedItems.Count > 0)
+            {
+                int index = -1;
+                for (int i = 0; i < lstData.Items.Count; i++)
+                {
+                    if (lstData.Items[i].Text == lstData.SelectedItems[0].Text)
+                    {
+                        index = i;
+                        X = index;
+                        break;
+                    }
+                }
+
+                txtHoTen.Text = listInfo[index].Name;
+                txtTruong.Text = listInfo[index].Truong;
+                txtMucHocBong.Text = listInfo[index].HocBong;
+                cbxLoai.Text = listInfo[index].Loai;
+                cmbLop.Text = listInfo[index].Lop;
             }
         }
     }

@@ -120,7 +120,6 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin học sinh";
-            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // label5
             // 
@@ -162,6 +161,7 @@
             this.txtMucHocBong.Size = new System.Drawing.Size(177, 20);
             this.txtMucHocBong.TabIndex = 4;
             this.txtMucHocBong.Text = "500.000 VNĐ";
+            this.txtMucHocBong.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // btnXoa
             // 
@@ -212,6 +212,7 @@
             this.lstData.TabIndex = 1;
             this.lstData.UseCompatibleStateImageBehavior = false;
             this.lstData.View = System.Windows.Forms.View.Details;
+            this.lstData.SelectedIndexChanged += new System.EventHandler(this.lstData_SelectedIndexChanged);
             // 
             // Form
             // 
