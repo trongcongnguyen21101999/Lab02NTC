@@ -171,6 +171,7 @@
             this.btnXoa.TabIndex = 7;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.UseVisualStyleBackColor = true;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // btnCapNhat
             // 
@@ -204,6 +205,7 @@
             // lstData
             // 
             this.lstData.Alignment = System.Windows.Forms.ListViewAlignment.Default;
+            this.lstData.HideSelection = false;
             this.lstData.Location = new System.Drawing.Point(331, 26);
             this.lstData.Name = "lstData";
             this.lstData.Size = new System.Drawing.Size(410, 302);

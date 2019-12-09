@@ -20,7 +20,7 @@ namespace BaitapLad02Bai1
             InitializeComponent();
             TaoBang();
             Control.CheckForIllegalCrossThreadCalls = false;
-            
+            lstData.FullRowSelect = true;
         }
 
         public void TaoBang()
@@ -76,19 +76,20 @@ namespace BaitapLad02Bai1
             Info info = new Info(txtHoTen.Text, txtTruong.Text, cmbLop.Text, cbxLoai.Text, txtMucHocBong.Text);
             listInfo.Add(info);
             lstData.Items.Add(AddItem());
+            ClearBox();
         }
 
         public void ClearBox()
         {
-            txtHoTen.Text = txtMucHocBong.Text = txtTruong.Text = "";
-            cbxLoai.Text = cmbLop.Text = "";
+            txtHoTen.Text = txtTruong.Text = "";
+            //cbxLoai.Text = cmbLop.Text = "";
         }
 
         public ListViewItem AddItem()
         {
-            ListViewItem liv = new ListViewItem();
+            ListViewItem liv = new ListViewItem(txtHoTen.Text);
 
-            liv.Text = txtHoTen.Text;
+            //liv.Text = txtHoTen.Text;
             liv.SubItems.Add(cbxLoai.Text);
             string HB = txtMucHocBong.Text;
             HB = HB.Substring(0, HB.IndexOf("VNĐ") - 1);
@@ -121,14 +122,16 @@ namespace BaitapLad02Bai1
 
         private void btnCapNhat_Click(object sender, EventArgs e)
         {
+            
+        }
+
+        private void btnXoa_Click(object sender, EventArgs e)
+        {
             if (lstData.SelectedItems.Count > 0)
             {
                 for (int i = 0; i < lstData.SelectedItems.Count; i++)
                 {
-                    for (int j = 0; j < lstData.SelectedItems[i].SubItems.Count; j++)
-                    {
-                        lstData.SelectedItems[i].SubItems.RemoveAt(j);
-                    }
+                    lstData.SelectedItems[i].Remove();
                 }
             }
         }
