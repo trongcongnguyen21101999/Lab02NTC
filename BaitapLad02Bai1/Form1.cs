@@ -112,11 +112,13 @@ namespace BaitapLad02Bai1
 
         private void btnCapNhat_Click(object sender, EventArgs e)
         {
+            while (X == -1){ }
             listInfo[X].Name = lstData.Items[X].SubItems[0].Text = txtHoTen.Text;
             listInfo[X].Lop = cmbLop.Text;
             listInfo[X].Loai = lstData.Items[X].SubItems[1].Text = cbxLoai.Text;
             listInfo[X].HocBong = lstData.Items[X].SubItems[2].Text = (txtMucHocBong.Text).Substring(0, (txtMucHocBong.Text).IndexOf("VNĐ") - 1);
             listInfo[X].Truong = txtTruong.Text;
+            X = -1;
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
