@@ -15,6 +15,7 @@ namespace BaitapLad02Bai1
     {
         private List<Info> listInfo = new List<Info>();
         private int X;
+        public int dem;
 
         public Form()
         {
@@ -123,13 +124,34 @@ namespace BaitapLad02Bai1
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
-            if (lstData.SelectedItems.Count > 0)
+            //if (lstData.SelectedItems.Count > 0)
+            //{
+            //    for (int i = 0; i < lstData.SelectedItems.Count; i++)
+            //    {
+            //        int a = lstData.TabIndex;
+            //        lstData.SelectedItems[i].Remove();
+            //    }
+            //}
+            //else
+            //{
+
+            //}
+
+            dem = int.Parse(txtHoTen.Text);
+            //for (int i = 0; i < X; i++)
+            //{
+            //    txtTruong.Text = i.ToString();
+            //}
+            Thread th = new Thread(Tang);
+            th.Start();
+        }
+
+        void Tang()
+        {
+            
+            for (int i = 0; i < dem; i++)
             {
-                for (int i = 0; i < lstData.SelectedItems.Count; i++)
-                {
-                    int a = lstData.TabIndex;
-                    lstData.SelectedItems[i].Remove();
-                }
+                txtTruong.Text = i.ToString();
             }
         }
 

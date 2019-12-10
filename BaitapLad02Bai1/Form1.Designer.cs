@@ -32,7 +32,7 @@
             this.cbxLoai = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.grbTTHS = new System.Windows.Forms.GroupBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.txtHoTen = new System.Windows.Forms.TextBox();
@@ -43,7 +43,7 @@
             this.btnThem = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.lstData = new System.Windows.Forms.ListView();
-            this.groupBox1.SuspendLayout();
+            this.grbTTHS.SuspendLayout();
             this.SuspendLayout();
             // 
             // cmbLop
@@ -98,28 +98,28 @@
             this.label2.TabIndex = 11;
             this.label2.Text = "Loại học tập";
             // 
-            // groupBox1
+            // grbTTHS
             // 
-            this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.txtHoTen);
-            this.groupBox1.Controls.Add(this.txtTruong);
-            this.groupBox1.Controls.Add(this.txtMucHocBong);
-            this.groupBox1.Controls.Add(this.btnXoa);
-            this.groupBox1.Controls.Add(this.btnCapNhat);
-            this.groupBox1.Controls.Add(this.btnThem);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.cmbLop);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.cbxLoai);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.ForeColor = System.Drawing.Color.Blue;
-            this.groupBox1.Location = new System.Drawing.Point(12, 27);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(292, 301);
-            this.groupBox1.TabIndex = 0;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Thông tin học sinh";
+            this.grbTTHS.Controls.Add(this.label5);
+            this.grbTTHS.Controls.Add(this.label4);
+            this.grbTTHS.Controls.Add(this.txtHoTen);
+            this.grbTTHS.Controls.Add(this.txtTruong);
+            this.grbTTHS.Controls.Add(this.txtMucHocBong);
+            this.grbTTHS.Controls.Add(this.btnXoa);
+            this.grbTTHS.Controls.Add(this.btnCapNhat);
+            this.grbTTHS.Controls.Add(this.btnThem);
+            this.grbTTHS.Controls.Add(this.label3);
+            this.grbTTHS.Controls.Add(this.cmbLop);
+            this.grbTTHS.Controls.Add(this.label2);
+            this.grbTTHS.Controls.Add(this.cbxLoai);
+            this.grbTTHS.Controls.Add(this.label1);
+            this.grbTTHS.ForeColor = System.Drawing.Color.Blue;
+            this.grbTTHS.Location = new System.Drawing.Point(12, 27);
+            this.grbTTHS.Name = "grbTTHS";
+            this.grbTTHS.Size = new System.Drawing.Size(292, 301);
+            this.grbTTHS.TabIndex = 0;
+            this.grbTTHS.TabStop = false;
+            this.grbTTHS.Text = "Thông tin học sinh";
             // 
             // label5
             // 
@@ -220,11 +220,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(769, 347);
             this.Controls.Add(this.lstData);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.grbTTHS);
             this.Name = "Form";
             this.Text = "Cấp học bổng";
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.grbTTHS.ResumeLayout(false);
+            this.grbTTHS.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -235,7 +235,7 @@
         private System.Windows.Forms.ComboBox cbxLoai;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox grbTTHS;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtHoTen;
